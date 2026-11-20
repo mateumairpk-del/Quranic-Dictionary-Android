@@ -1,0 +1,14 @@
+QURANIC DICTIONARY - APK WITHOUT ANDROID STUDIO
+
+This ZIP is a complete Android project with a GitHub Actions build workflow.
+
+1. Open github.com and sign in / create a free account.
+2. Click + -> New repository. Name: QuranicDictionary. Set PRIVATE if you wish. Create repository.
+3. Click 'uploading an existing file' or Add file -> Upload files.
+4. EXTRACT this ZIP on your PC first. Upload ALL CONTENTS INSIDE the extracted folder (including hidden .github folder) to the repository ROOT. GitHub web upload may not accept folders via file picker: drag-and-drop the project folders/files from Windows Explorer; ensure .github/workflows/build-apk.yml is present in the repo. Alternatively use GitHub Desktop to commit the extracted contents.
+5. Commit changes.
+6. Open Actions -> Build Quranic Dictionary APK -> Run workflow (or wait for the automatic push build).
+7. After green success, open the run -> Artifacts -> QuranicDictionary-APK. Download ZIP, extract app-debug.apk.
+8. Transfer APK to your Android phone and install. Allow 'Install unknown apps' if Android asks.
+
+Important: This package is prepared for GitHub Actions, but the online build has NOT been run or verified here. If the build fails, share the error screenshot. Debug APK is for personal testing, not Play Store release.

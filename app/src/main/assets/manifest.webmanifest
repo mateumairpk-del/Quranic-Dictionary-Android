@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Quranic Dictionary - 500 Vocabulary Entries",
+  "short_name": "Quran Dict",
+  "description": "Quranic vocabulary with Urdu and English meanings, flashcards and quizzes",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#064E3B",
+  "theme_color": "#064E3B",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

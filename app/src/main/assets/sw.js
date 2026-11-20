@@ -1,0 +1,6 @@
+const CACHE='quran-dictionary-v2-2026-11-19';
+const ASSETS=["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./vendor/tailwind.css", "./vendor/fontawesome.css", "./vendor/fonts.css", "./vendor/urdu.ttf", "./vendor/arabic.ttf", "./vendor/webfonts/fa-regular-400.woff2", "./vendor/webfonts/fa-solid-900.woff2", "./vendor/webfonts/fa-brands-400.woff2", "./vendor/webfonts/fa-v4compatibility.woff2"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()])));
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(fetch(e.request).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}return res;}).catch(()=>caches.match(e.request).then(res=>res||caches.match('./index.html'))));});
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(cs=>cs.length?cs[0].focus():self.clients.openWindow('./')))});
