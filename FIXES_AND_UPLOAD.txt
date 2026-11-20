@@ -1,0 +1,15 @@
+QURANIC DICTIONARY - ANDROID FIXED SOURCE (v3)
+
+Fixes:
+1. Font Awesome CSS webfont URLs fixed (../webfonts -> ./webfonts).
+2. Dictionary and flashcard null-frequency crashes fixed.
+3. Arabic pronunciation now uses native Android TextToSpeech; works offline ONLY if an Arabic voice is installed on the phone. Otherwise Android will show a message to install it.
+
+To update existing GitHub repository:
+1. Open repository > Add file > Upload files.
+2. Upload ALL contents of this folder (including .github) preserving directory structure. GitHub browser uploads may not support folder structure reliably; GitHub Desktop is easier.
+3. Commit to main. GitHub Actions will rebuild automatically.
+4. Download the new APK from Actions > latest successful run > Artifacts.
+5. Install over old app (same package name).
+
+IMPORTANT: Source-level static checks passed, but an Android device runtime test and APK build have not been performed here.

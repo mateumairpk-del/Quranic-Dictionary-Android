@@ -11,12 +11,23 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.webkit.WebSettings
+import android.speech.tts.TextToSpeech
+import android.widget.Toast
+import java.util.Locale
 import org.json.JSONObject
 
 class MainActivity : Activity() {
  private lateinit var web: WebView
+ private var tts: TextToSpeech? = null
+ private var ttsReady = false
  override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
+  tts = TextToSpeech(this) { status ->
+   if (status == TextToSpeech.SUCCESS) {
+    val result = tts?.setLanguage(Locale.forLanguageTag("ar-SA"))
+    ttsReady = result != TextToSpeech.LANG_MISSING_DATA && result != TextToSpeech.LANG_NOT_SUPPORTED
+   }
+  }
   web = WebView(this)
   setContentView(web)
   web.settings.javaScriptEnabled = true
@@ -44,6 +55,16 @@ class MainActivity : Activity() {
   ReminderScheduler.ensureChannel(this)
  }
  inner class Bridge {
+  @JavascriptInterface fun speakArabic(text: String) {
+   runOnUiThread {
+    if (ttsReady) {
+     tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "quran-arabic")
+    } else {
+     Toast.makeText(this@MainActivity, "Arabic voice not installed. Phone Settings > Text-to-speech > Install Arabic voice.", Toast.LENGTH_LONG).show()
+    }
+   }
+  }
+
   @JavascriptInterface fun updateReminders(json: String) {
    try {
     JSONObject(json) // Validate before persisting.
@@ -68,5 +89,5 @@ class MainActivity : Activity() {
  override fun onBackPressed() {
   if (web.canGoBack()) web.goBack() else super.onBackPressed()
  }
- override fun onDestroy() { web.destroy(); super.onDestroy() }
+ override fun onDestroy() { tts?.stop(); tts?.shutdown(); web.destroy(); super.onDestroy() }
 }
