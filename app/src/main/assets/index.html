@@ -167,7 +167,11 @@
     #welcomeModal .brand-soft-card .text-slate-900,#welcomeModal .brand-soft-card .text-slate-800 {color:#fff6e8!important}
     #welcomeModal .brand-soft-card .text-slate-600 {color:#c8c1b5!important}
     
-  </style>
+    /* Scroll the entire welcome page together, including the logo and dedication. */
+  .welcome-scroll-card { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #D4AF37 #151515; }
+  .welcome-scroll-card::-webkit-scrollbar { width: 4px; }
+  .welcome-scroll-card::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+</style>
 </head>
 <body class="bg-cream text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 min-h-screen flex flex-col">
 
@@ -321,8 +325,8 @@
 
   <!-- Welcome & App Maqsad Intro Modal -->
     <div id="welcomeModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 transition-opacity duration-300">
-    <div class="w-full max-w-md rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-modal-pop">
-      <div class="brand-hero text-white p-5 sm:p-6 text-center islamic-pattern relative shrink-0">
+    <div class="w-full max-w-md rounded-3xl shadow-2xl overflow-y-auto max-h-[92vh] animate-modal-pop welcome-scroll-card">
+      <div class="brand-hero text-white p-5 sm:p-6 text-center islamic-pattern relative">
         <div class="arabic-text text-xl text-amber-300 font-bold mb-1" dir="rtl">
           بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
         </div>
@@ -339,14 +343,15 @@
         <p class="text-xs text-blue-100 mt-1.5 max-w-[280px] mx-auto leading-relaxed">
           Welcome — Quran Majeed ko samajhne ka khoobsurat safar.
         </p>
+        <div class="luxe-dedication mt-4 mx-auto" style="max-width:340px;background:linear-gradient(145deg,rgba(212,175,55,.13),rgba(212,175,55,.04));border:1px solid rgba(212,175,55,.48);border-radius:18px;padding:15px 13px;box-shadow:0 10px 30px rgba(0,0,0,.18)">
+          <div class="luxe-dedication-label mb-2" style="letter-spacing:.18em">WITH LOVE &amp; GRATITUDE</div>
+          <div class="luxe-dedication-title" style="font-size:17px;line-height:1.4;color:#F6E5B5">Dedicated to My Parents, Brothers, Sister, My Wife &amp; Bhabhis</div>
+          <div class="mt-2 text-xs" style="color:#E7D6A5;line-height:1.55">May Allah bless our family with knowledge, guidance and barakah. Ameen.</div>
+        </div>
       </div>
 
-      <div class="luxe-intro p-5 overflow-y-auto space-y-4 text-xs sm:text-sm leading-relaxed">
-        <div class="luxe-dedication">
-          <div class="luxe-dedication-label mb-1">With Love & Gratitude</div>
-          <div class="luxe-dedication-title">Dedicated to My Parents, Brothers &amp; Sister</div>
-          <div class="mt-1.5 text-[11px] text-amber-200">May Allah bless our family with knowledge, guidance and barakah. Ameen.</div>
-        </div>
+      <div class="luxe-intro p-5 space-y-4 text-xs sm:text-sm leading-relaxed">
+
         <div class="brand-soft-card rounded-3xl p-4">
           <div class="flex items-center justify-between gap-3 mb-2">
             <h3 class="font-extrabold text-[13px] uppercase tracking-wider brand-primary-text flex items-center gap-2">
@@ -397,7 +402,7 @@
         </div>
       </div>
 
-      <div class="p-4 shrink-0" style="background:#101010;border-top:1px solid rgba(212,175,55,.24)">
+      <div class="p-4" style="background:#101010;border-top:1px solid rgba(212,175,55,.24)">
         <button onclick="dismissWelcomeModal()" class="brand-primary-btn w-full py-3.5 rounded-2xl text-white font-extrabold text-sm active:scale-95 transition flex items-center justify-center gap-2">
           <span>Get Started — Bismillah</span>
           <i class="fa-solid fa-arrow-right text-amber-300"></i>
@@ -10192,6 +10197,105 @@
       }
     ];
 
+    const AMBIYA_URDU = {
+  "adam": {
+    "name": "حضرت آدم علیہ السلام",
+    "title": "غلطی کا اعتراف اور سچی توبہ",
+    "themeTag": "توبہ اور ندامت",
+    "qissa": "اللہ تعالیٰ نے حضرت آدم علیہ السلام کو پہلا انسان اور زمین پر اپنا خلیفہ بنایا۔ شیطان کے بہکاوے میں آ کر ان سے ممنوعہ درخت کا پھل کھانے کی غلطی ہوئی۔ لیکن انہوں نے ضد کرنے کے بجائے اپنی غلطی تسلیم کی اور اللہ تعالیٰ سے معافی مانگی۔",
+    "implementation": [
+      "غلطی ہو جائے تو دوسروں پر الزام لگانے یا بہانے بنانے کے بجائے اپنی غلطی فوراً تسلیم کریں۔",
+      "مایوس ہونے کے بجائے اللہ تعالیٰ سے سچی توبہ کریں؛ اس کی رحمت بہت وسیع ہے۔",
+      "حسد اور تکبر سے بچیں، کیونکہ تکبر ابلیس کی تباہی کا سبب بنا۔"
+    ],
+    "duaTranslation": "اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اور اگر تو ہمیں معاف نہ کرے اور ہم پر رحم نہ فرمائے تو ہم یقیناً نقصان اٹھانے والوں میں ہوں گے۔"
+  },
+  "nuh": {
+    "name": "حضرت نوح علیہ السلام",
+    "title": "۹۵۰ سال کی محنت اور صبر و استقامت",
+    "themeTag": "صبر اور دعوت",
+    "qissa": "حضرت نوح علیہ السلام نے ۹۵۰ سال تک اپنی قوم کو ایک اللہ کی عبادت کی دعوت دی۔ لوگ ان کا مذاق اڑاتے اور کانوں میں انگلیاں ڈال لیتے، مگر آپ نے ہمت نہ ہاری۔ پھر اللہ کے حکم سے آپ نے کشتی بنائی اور طوفان میں ایمان والوں کو نجات ملی۔",
+    "implementation": [
+      "نیک کام یا دین کی دعوت پر لوگ مذاق اڑائیں تو ہمت نہ ہاریں۔",
+      "نتیجہ اللہ کے ہاتھ میں ہے؛ ہمارا کام اخلاص کے ساتھ کوشش کرتے رہنا ہے۔",
+      "برے ماحول اور غلط دوستوں کے دباؤ میں آ کر حق کا راستہ نہ چھوڑیں۔"
+    ],
+    "duaTranslation": "اے میرے رب! مجھے، میرے والدین کو اور ہر اس شخص کو بخش دے جو ایمان کی حالت میں میرے گھر میں داخل ہو۔"
+  },
+  "ibrahim": {
+    "name": "حضرت ابراہیم علیہ السلام",
+    "title": "کامل توکل اور قربانی کے لیے آمادگی",
+    "themeTag": "توکل اور قربانی",
+    "qissa": "حضرت ابراہیم علیہ السلام نے اپنی قوم کے بت پرستانہ عقائد کی مخالفت کی۔ جب انہیں آگ میں ڈالا گیا تو انہوں نے اللہ پر بھروسا رکھا اور اللہ نے آگ کو ان کے لیے ٹھنڈا اور سلامتی والا بنا دیا۔ بعد میں اپنے بیٹے حضرت اسماعیل علیہ السلام کے متعلق آزمائش میں بھی انہوں نے اللہ کے حکم کے سامنے سر جھکا دیا۔",
+    "implementation": [
+      "زندگی کی بڑی سے بڑی مشکل میں اللہ تعالیٰ پر بھروسا رکھیں۔",
+      "والدین اور بچوں کے ساتھ نرمی اور حکمت سے بات کریں۔",
+      "اللہ کے حکم کے سامنے اپنی خواہشات اور پسند کو پیچھے رکھنے کا جذبہ پیدا کریں۔"
+    ],
+    "duaTranslation": "اے ہمارے رب! ہماری یہ خدمت قبول فرما، بے شک تو ہی سب کچھ سننے والا اور جاننے والا ہے۔"
+  },
+  "yusuf": {
+    "name": "حضرت یوسف علیہ السلام",
+    "title": "کردار کی پاکیزگی اور معاف کرنے کا حوصلہ",
+    "themeTag": "پاکیزگی اور معافی",
+    "qissa": "حضرت یوسف علیہ السلام کو اپنے بھائیوں کے حسد کی وجہ سے کنویں میں ڈالا گیا، پھر غلام بنا کر فروخت کیا گیا اور بے قصور ہونے کے باوجود قید بھی رہے۔ مگر انہوں نے ہر حال میں ایمان اور پاکیزگی کی حفاظت کی۔ جب اللہ نے انہیں مصر میں اقتدار عطا کیا تو انہوں نے اپنے بھائیوں کو معاف کر دیا۔",
+    "implementation": [
+      "تنہائی میں بھی اللہ سے ڈرتے ہوئے اپنے کردار اور نگاہ کی حفاظت کریں۔",
+      "قریبی لوگوں کے برے سلوک پر صبر کریں اور اللہ پر بھروسا رکھیں۔",
+      "اختیار ملنے پر انتقام کے بجائے معافی کو ترجیح دیں۔"
+    ],
+    "duaTranslation": "مجھے فرمانبرداری کی حالت میں وفات دے اور نیک لوگوں کے ساتھ ملا دے۔"
+  },
+  "musa": {
+    "name": "حضرت موسیٰ علیہ السلام",
+    "title": "ظلم کے خلاف جرأت اور اللہ کی مدد پر یقین",
+    "themeTag": "ہمت اور یقین",
+    "qissa": "جب فرعون نے بنی اسرائیل پر ظلم کیا تو اللہ نے حضرت موسیٰ علیہ السلام کو حق کی دعوت کے لیے اس کے پاس بھیجا۔ جب پیچھے فرعون کا لشکر اور سامنے سمندر تھا تو آپ نے یقین سے کہا کہ میرا رب میرے ساتھ ہے، وہ مجھے راستہ دکھائے گا۔",
+    "implementation": [
+      "بڑی مشکل میں بھی ناامید نہ ہوں اور اللہ کی مدد پر یقین رکھیں۔",
+      "کسی اہم کام سے پہلے حضرت موسیٰ علیہ السلام کی دعا «رَبِّ اشْرَحْ لِي صَدْرِي» پڑھیں۔",
+      "ظلم اور ناانصافی کے سامنے حکمت اور ہمت سے حق کا ساتھ دیں۔"
+    ],
+    "duaTranslation": "اے میرے رب! میرا سینہ کھول دے اور میرا کام میرے لیے آسان فرما۔"
+  },
+  "ayub": {
+    "name": "حضرت ایوب علیہ السلام",
+    "title": "بیماری اور آزمائش میں صبر کی مثال",
+    "themeTag": "آزمائش میں صبر",
+    "qissa": "حضرت ایوب علیہ السلام کو اللہ نے نعمتیں عطا کیں، پھر سخت آزمائشوں کا سامنا ہوا۔ مال، اہل خانہ اور صحت کے حوالے سے مشکلات آئیں، مگر آپ نے صبر کیا اور اللہ کی رحمت کو پکارا۔ اللہ نے آپ کی تکلیف دور فرمائی اور اپنی رحمت سے نوازا۔",
+    "implementation": [
+      "بیماری، مالی نقصان یا جدائی کے وقت صبر اور دعا کا اہتمام کریں۔",
+      "دعا میں اللہ تعالیٰ کی رحمت کا واسطہ دیں، جیسا کہ حضرت ایوب علیہ السلام نے کیا۔",
+      "مشکلات میں اللہ سے امید رکھیں اور علاج و جائز کوشش بھی جاری رکھیں۔"
+    ],
+    "duaTranslation": "مجھے تکلیف پہنچی ہے اور تو سب رحم کرنے والوں سے بڑھ کر رحم فرمانے والا ہے۔"
+  },
+  "yunus": {
+    "name": "حضرت یونس علیہ السلام",
+    "title": "پریشانی اور تنہائی میں ذکر کی طاقت",
+    "themeTag": "پریشانی میں امید",
+    "qissa": "حضرت یونس علیہ السلام اپنی قوم سے ناراض ہو کر بستی سے نکل گئے۔ سمندر میں قرعہ اندازی کے بعد انہیں ایک بڑی مچھلی نے نگل لیا۔ اندھیروں میں انہوں نے اللہ کی پاکی بیان کی اور اپنی غلطی کا اعتراف کیا، تو اللہ نے انہیں نجات دی۔",
+    "implementation": [
+      "غصے یا جلدبازی میں اہم فیصلے نہ کریں۔",
+      "پریشانی اور مشکل وقت میں اللہ کا ذکر اور دعا کریں۔",
+      "اپنی کوتاہی تسلیم کریں اور اللہ کی طرف رجوع کریں۔"
+    ],
+    "duaTranslation": "تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ہی ظلم کرنے والوں میں سے تھا۔"
+  },
+  "muhammad": {
+    "name": "حضرت محمد ﷺ",
+    "title": "رحمت للعالمین اور بہترین اخلاق",
+    "themeTag": "بہترین اسوۂ حسنہ",
+    "qissa": "اللہ تعالیٰ نے نبی کریم ﷺ کو تمام جہانوں کے لیے رحمت بنا کر بھیجا۔ مکہ اور طائف میں تکالیف برداشت کرنے کے باوجود آپ ﷺ نے صبر اور رحمت کا مظاہرہ کیا۔ اہل خانہ، یتیموں، کمزوروں اور پڑوسیوں کے ساتھ آپ کا حسن سلوک پوری انسانیت کے لیے نمونہ ہے۔",
+    "implementation": [
+      "گھر والوں، بچوں اور ماتحت افراد کے ساتھ نرمی اور عزت سے پیش آئیں۔",
+      "برائی کے جواب میں جہاں ممکن ہو بھلائی اور درگزر کا راستہ اختیار کریں۔",
+      "روزانہ قرآن کی تلاوت کریں، اس کے معانی سمجھیں اور زندگی میں عمل کریں۔"
+    ],
+    "duaTranslation": "اے ہمارے رب! ہمیں دنیا میں بھلائی عطا فرما اور آخرت میں بھی بھلائی عطا فرما، اور ہمیں آگ کے عذاب سے بچا۔"
+  }
+};
+
     const NAMAZ_DUAIN = [
       {
         id: 'sana',
@@ -11522,6 +11626,8 @@
     }
 
     function renderAmbiya(container) {
+      const urduMode = state.appLanguage === 'urdu';
+      const localized = (story, field) => urduMode ? (AMBIYA_URDU[story.id]?.[field] || story[field]) : story[field];
       const visibleStories = state.selectedNabiId === 'all'
         ? AMBIYA_STORIES
         : AMBIYA_STORIES.filter(s => s.id === state.selectedNabiId);
@@ -11531,18 +11637,18 @@
           <div class="flex items-center justify-between gap-2">
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/15 px-2.5 py-0.5 rounded-full">
-                Quranic Stories & Practical Life
+                ${urduMode ? "قرآنی واقعات اور عملی زندگی" : "Quranic Stories & Practical Life"}
               </span>
               <h2 class="text-base sm:text-lg font-extrabold mt-1.5">
-                Ambiya Karam (AS) Ke Qissay
+                ${urduMode ? "انبیائے کرام علیہم السلام کے واقعات" : "Ambiya Karam (AS) Ke Qissay"}
               </h2>
               <p class="text-xs text-amber-100/90 mt-0.5">
-                Har Nabi ke waqia se aaj ki zindagi mein amli implementation aur masnoon dua
+                ${urduMode ? "ہر نبی کے واقعے سے آج کی زندگی کے لیے عملی سبق اور قرآنی دعا" : "Har Nabi ke waqia se aaj ki zindagi mein amli implementation aur masnoon dua"}
               </p>
             </div>
             <div class="text-right shrink-0 pl-2">
               <div class="text-lg font-black text-amber-300">${state.reflectedAmbiyaIds.length}/${AMBIYA_STORIES.length}</div>
-              <div class="text-[10px] text-amber-200">Parh Liye</div>
+              <div class="text-[10px] text-amber-200">${urduMode ? "پڑھ لیے" : "Parh Liye"}</div>
             </div>
           </div>
         </div>
@@ -11556,7 +11662,7 @@
                 : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
             }"
           >
-            Tamam (${AMBIYA_STORIES.length})
+            ${urduMode ? "تمام" : "Tamam"} (${AMBIYA_STORIES.length})
           </button>
           ${AMBIYA_STORIES.map(s => `
             <button
@@ -11567,7 +11673,7 @@
                   : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
               }"
             >
-              ${s.name.replace('Hazrat ', '')}
+              ${localized(s, "name").replace('Hazrat ', '').replace('حضرت ', '')}
             </button>
           `).join('')}
         </div>
@@ -11585,10 +11691,10 @@
                 <div class="flex items-start justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
                   <div>
                     <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 dark:text-amber-400 bg-amber-100/80 dark:bg-slate-900/50 px-2.5 py-0.5 rounded-full">
-                      ${story.themeTag}
+                      ${localized(story, "themeTag")}
                     </span>
                     <h3 class="text-base font-extrabold text-slate-900 dark:text-white mt-1.5">
-                      ${story.name} — ${story.title}
+                      ${localized(story, "name")} — ${localized(story, "title")}
                     </h3>
                     <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
                       ${story.surahRef}
@@ -11601,19 +11707,19 @@
 
                 <div class="mt-3">
                   <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
-                    <i class="fa-solid fa-book-open text-amber-500 dark:text-amber-400 mr-1"></i> Quranic Qissa:
+                    <i class="fa-solid fa-book-open text-amber-500 dark:text-amber-400 mr-1"></i> ${urduMode ? "قرآنی واقعہ:" : "Quranic Qissa:"}
                   </div>
                   <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                    ${story.qissa}
+                    ${localized(story, "qissa")}
                   </p>
                 </div>
 
                 <div class="mt-3.5 p-3.5 rounded-2xl bg-amber-50/80 dark:bg-slate-950/40 border border-amber-200/70 dark:border-amber-800/40">
                   <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-300 dark:text-amber-300 mb-2">
-                    <i class="fa-solid fa-person-walking-arrow-right mr-1"></i> Aaj Ki Zindagi Mein Amli Implementation:
+                    <i class="fa-solid fa-person-walking-arrow-right mr-1"></i> ${urduMode ? "آج کی زندگی میں عملی سبق:" : "Aaj Ki Zindagi Mein Amli Implementation:"}
                   </div>
                   <ul class="space-y-1.5">
-                    ${story.implementation.map(point => `
+                    ${localized(story, "implementation").map(point => `
                       <li class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 flex items-start gap-2 leading-relaxed">
                         <i class="fa-solid fa-check-circle text-amber-500 dark:text-amber-400 mt-1 text-xs shrink-0"></i>
                         <span>${point}</span>
@@ -11625,7 +11731,7 @@
                 <div class="mt-3.5 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/60">
                   <div class="flex items-center justify-between mb-1.5">
                     <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-800 dark:text-amber-300">
-                      Mashhoor Quranic Dua:
+                      ${urduMode ? "قرآنی دعا:" : "Mashhoor Quranic Dua:"}
                     </span>
                     <button
                       onclick="speakArabic('${story.duaArabic.replace(/'/g, "\\'")}', this)"
@@ -11638,7 +11744,7 @@
                     ${story.duaArabic}
                   </p>
                   <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-                    ${story.duaTranslation}
+                    ${localized(story, "duaTranslation")}
                   </p>
                 </div>
 
@@ -11660,7 +11766,7 @@
                     }"
                   >
                     <i class="fa-solid ${isReflected ? 'fa-circle-check' : 'fa-check'}"></i>
-                    ${isReflected ? 'Sabaq Yaad' : 'Mark Read'}
+                    ${isReflected ? (urduMode ? 'سبق یاد' : 'Sabaq Yaad') : (urduMode ? 'پڑھ لیا' : 'Mark Read')}
                   </button>
                 </div>
               </article>
@@ -12204,13 +12310,8 @@
             setTimeout(() => {
               splash.classList.add('hidden');
               splash.style.display = 'none';
-              let introSeen = false;
-              try {
-                introSeen = localStorage.getItem('quranic_dict_intro_seen_v1') === 'true';
-              } catch (e) {}
-              if (forceShowWelcome || !introSeen) {
-                openModal('welcomeModal');
-              }
+              // Show the family dedication on every app launch.
+              openModal('welcomeModal');
             }, 350);
           }, 200);
         }
