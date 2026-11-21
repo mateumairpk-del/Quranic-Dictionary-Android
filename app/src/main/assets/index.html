@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quranic Dictionary - 500 Essential Words</title>
-  <meta name="theme-color" content="#064E3B" />
+  <meta name="theme-color" content="#132B5C" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -136,19 +136,50 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
       animation: shimmerSweep 2.4s infinite;
     }
+  
+    :root {--brand-primary:#11100e;--brand-secondary:#26211c;--brand-deep:#050505;--brand-accent:#D4AF37;--brand-cream:#F5EBDD;--brand-card:#1a1a1a;}
+    body {background:#101010;}
+    #splashScreen, #appHeader, .brand-hero {
+      background:radial-gradient(circle at 50% 25%,rgba(212,175,55,.16),transparent 42%),linear-gradient(148deg,#080808,#241b12 55%,#0b0b0b)!important;
+      color:#f5ebdd!important;
+    }
+    #appHeader {box-shadow:0 13px 35px rgba(0,0,0,.38);border-bottom:1px solid rgba(212,175,55,.35)}
+    #welcomeModal>div {border:1px solid rgba(212,175,55,.32);background:#121212;}
+    .brand-soft-card {background:linear-gradient(135deg,#24201b,#161616);border:1px solid rgba(212,175,55,.2);box-shadow:0 5px 18px rgba(0,0,0,.14);}
+    .brand-soft-chip {background:rgba(212,175,55,.15);color:#e8cc7a;border:1px solid rgba(212,175,55,.35)}
+    .brand-primary-btn {background:linear-gradient(95deg,#b88a28,#f0d27d,#bd902b)!important;color:#15110c!important;box-shadow:0 8px 22px rgba(212,175,55,.21)}
+    .brand-primary-text,.brand-accent-text {color:#e4c36d!important;}
+    .luxe-intro {background:#101010;color:#f5ebdd;}
+    .luxe-intro h3,.luxe-intro .feature-title {color:#f8f1df!important;}
+    .luxe-intro .feature-description {color:#c8c1b5!important;}
+    .luxe-dedication {background:linear-gradient(115deg,rgba(212,175,55,.13),rgba(212,175,55,.035));border:1px solid rgba(212,175,55,.5);border-radius:19px;padding:14px 14px 13px;text-align:center;}
+    .luxe-dedication-title {font-family:Georgia,'Times New Roman',serif;color:#f5ebdd;font-size:15px;font-weight:700;line-height:1.55;}
+    .luxe-dedication-label {color:#d4af37;letter-spacing:.16em;text-transform:uppercase;font-size:10px;font-weight:800;}
+    .luxe-arch {border:1px solid rgba(212,175,55,.34);border-radius:48% 48% 22px 22px;padding:20px 15px 16px;background:radial-gradient(ellipse at 50% 100%,rgba(212,175,55,.1),transparent 55%);}
+    .luxe-logo {box-shadow:0 0 35px rgba(212,175,55,.11);}
+    html:not(.dark) #appMain {background:#f5ebdd;}
+    html.dark #appMain {background:#101010;}
+    html.dark #appMain .bg-slate-900,html.dark #appMain .dark\:bg-slate-900 {background-color:#1a1a1a!important;}
+    html.dark #appMain .dark\:bg-slate-800,html.dark #appMain .dark\:bg-slate-800\/70 {background-color:#24211e!important;}
+    #splashScreen .splash-logo-glow {border-color:#d4af37!important;background:#060606!important}
+    #welcomeModal .bg-white,#welcomeModal .dark\:bg-slate-900 {background:#101010!important}
+    #welcomeModal .text-slate-700,#welcomeModal .text-slate-600 {color:#ccc2b4!important}
+    #welcomeModal .brand-soft-card .text-slate-900,#welcomeModal .brand-soft-card .text-slate-800 {color:#fff6e8!important}
+    #welcomeModal .brand-soft-card .text-slate-600 {color:#c8c1b5!important}
+    
   </style>
 </head>
 <body class="bg-cream text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 min-h-screen flex flex-col">
 
   <!-- Animated Quran Splash / Loading Screen -->
-  <div id="splashScreen" class="fixed inset-0 z-[60] bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 text-white flex flex-col items-center justify-center p-6 text-center islamic-pattern transition-opacity duration-500">
+  <div id="splashScreen" class="fixed inset-0 z-[60] bg-gradient-to-br from-amber-950 via-amber-900 to-amber-950 text-white flex flex-col items-center justify-center p-6 text-center islamic-pattern transition-opacity duration-500">
     <div class="w-full max-w-xs flex flex-col items-center">
       <div class="arabic-text text-xl sm:text-2xl text-amber-300 font-bold mb-5" dir="rtl">
         بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
       </div>
 
       <!-- Quran Logo Image -->
-      <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-amber-400/70 shadow-2xl splash-logo-glow bg-emerald-950 flex items-center justify-center mb-5">
+      <div class="w-28 h-28 rounded-3xl overflow-hidden border-2 border-amber-400/70 shadow-2xl splash-logo-glow bg-slate-950 flex items-center justify-center mb-5">
         <img
           src="./icon-512.png"
           alt="Quranic Dictionary Logo"
@@ -160,14 +191,15 @@
       <h2 class="text-2xl font-extrabold tracking-tight text-white">
         Quranic Dictionary
       </h2>
-      <p class="text-xs text-emerald-200 mt-1">
-        500 Essential Words • Estimated coverage: up to learning progress
+      <div class="mt-3 text-[11px] uppercase font-bold tracking-[0.14em] text-amber-300">Ilm • Amal • Tadabbur</div>
+      <p class="text-xs text-amber-200 mt-1">
+        500 Quranic Alfaaz • Ilm, Amal aur Tadabbur
       </p>
 
       <!-- Progress Bar -->
       <div class="w-full mt-7">
         <div class="flex items-center justify-between text-[11px] text-amber-300 font-bold mb-1.5 px-0.5">
-          <span id="splashStatusText">Quranic Alfaaz Tayyar Ho Rahe Hain...</span>
+          <span id="splashStatusText">Ilm-e-Quran ka safar tayyar ho raha hai...</span>
           <span id="splashPercentText">0%</span>
         </div>
         <div class="w-full h-2.5 bg-black/40 rounded-full overflow-hidden border border-white/15 p-0.5">
@@ -178,13 +210,13 @@
   </div>
 
   <!-- App Container (Centered Android App Frame on Desktop, Full Screen on Mobile) -->
-  <div class="w-full max-w-lg mx-auto min-h-screen flex flex-col bg-cream dark:bg-slate-950 shadow-2xl relative border-x border-slate-200/70 dark:border-slate-800">
+  <div class="w-full max-w-lg mx-auto min-h-screen flex flex-col bg-white dark:bg-slate-950 shadow-2xl relative border-x border-slate-200/70 dark:border-slate-800">
 
     <!-- Top Android Status & App Header -->
-    <header class="sticky top-0 z-30 bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white shadow-lg islamic-pattern rounded-b-3xl px-4 pt-4 pb-5">
+    <header id="appHeader" class="sticky top-0 z-30 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-950 text-white shadow-lg islamic-pattern rounded-b-3xl px-4 pt-4 pb-5">
       <div class="flex items-center justify-between mb-3">
         <button onclick="startSplashSequence(true)" title="Replay Loading & Welcome Screen" class="flex items-center gap-3 text-left group active:scale-95 transition">
-          <div class="w-11 h-11 rounded-2xl overflow-hidden border-2 border-amber-400/70 shadow-md animate-float shrink-0 bg-emerald-950">
+          <div class="w-11 h-11 rounded-2xl overflow-hidden border-2 border-amber-400/70 shadow-md animate-float shrink-0 bg-slate-950">
             <img
               src="./icon-192.png"
               alt="Quran Logo"
@@ -195,9 +227,9 @@
           <div>
             <h1 class="text-lg font-extrabold tracking-tight leading-none flex items-center gap-1.5 group-hover:text-amber-200 transition">
               Quranic Dictionary
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-emerald-950 px-1.5 py-0.5 rounded-full">Est. learning progress</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-300 text-slate-900 px-1.5 py-0.5 rounded-full">500 Words</span>
             </h1>
-            <p class="text-xs text-emerald-200 mt-1">500 Essential Words • Urdu & English</p>
+            <p class="text-xs text-blue-100 mt-1">500 Essential Words • Urdu, Roman Urdu & English</p>
           </div>
         </button>
 
@@ -205,14 +237,18 @@
           <!-- Daily Reminder Bell Button -->
           <button onclick="openModal('reminderModal')" title="Daily Motivational Reminder" class="relative w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-amber-300">
             <i class="fa-solid fa-bell text-sm"></i>
-            <span id="reminderActiveDot" class="hidden absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-emerald-900"></span>
+            <span id="reminderActiveDot" class="hidden absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-amber-900"></span>
           </button>
           <!-- App Intro / Maqsad Button -->
-          <button onclick="openModal('welcomeModal')" title="App Ka Maqsad & Features" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-emerald-100">
+          <button onclick="openModal('welcomeModal')" title="App Ka Maqsad & Features" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-amber-100">
             <i class="fa-solid fa-circle-info text-sm"></i>
           </button>
+          <!-- App language switch beside theme toggle -->
+          <button id="languageToggle" onclick="toggleAppLanguage()" title="Switch Urdu / Roman Urdu" aria-label="Switch Urdu / Roman Urdu" class="min-w-[56px] h-9 px-2 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-amber-200 text-[11px] font-extrabold border border-white/20">
+            <span id="languageToggleLabel">اردو</span>
+          </button>
           <!-- Dark Mode Toggle -->
-          <button id="themeToggle" onclick="toggleDarkMode()" title="Toggle Theme" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-emerald-100">
+          <button id="themeToggle" onclick="toggleDarkMode()" title="Toggle Theme" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-amber-100">
             <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
           </button>
         </div>
@@ -221,14 +257,14 @@
       <!-- Progress Bar & Quran Coverage Stat -->
       <div class="bg-black/25 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
         <div class="flex items-center justify-between text-xs mb-1.5">
-          <span class="text-emerald-100 font-medium">
+          <span class="text-amber-100 font-medium">
             Learned: <strong id="headerLearnedCount" class="text-white">0</strong> / <span id="headerTotalWords">500</span> Vocabulary Entries
           </span>
           <span class="text-amber-300 font-bold">
             <span id="headerQuranPercent">0.0</span>% words learned
           </span>
         </div>
-        <div class="w-full h-2 bg-emerald-950/80 rounded-full overflow-hidden">
+        <div class="w-full h-2 bg-slate-950/80 rounded-full overflow-hidden">
           <div id="headerProgressBar" class="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-full transition-all duration-700 ease-out progress-shimmer" style="width: 0%"></div>
         </div>
       </div>
@@ -241,7 +277,7 @@
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform translate-y-2">
-      <div class="bg-slate-900/95 dark:bg-emerald-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-xl border border-white/10 flex items-center gap-2">
+      <div class="bg-slate-900/95 dark:bg-slate-900 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-xl border border-white/10 flex items-center gap-2">
         <i class="fa-solid fa-circle-check text-amber-400"></i>
         <span id="toastMsg">Saved!</span>
       </div>
@@ -250,7 +286,7 @@
     <!-- Bottom Android Navigation Bar -->
     <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-lg z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-1 py-2 shadow-2xl">
       <div class="grid grid-cols-6 gap-0.5">
-        <button onclick="switchTab('dictionary')" id="nav-dictionary" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl transition active:scale-95 text-emerald-800 dark:text-amber-400 bg-emerald-50 dark:bg-emerald-950/70">
+        <button onclick="switchTab('dictionary')" id="nav-dictionary" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl transition active:scale-95 text-amber-400 dark:text-amber-400 bg-amber-50 dark:bg-slate-950/70">
           <i class="fa-solid fa-book-open text-sm mb-1"></i>
           <span class="text-[9px] font-bold">Words</span>
         </button>
@@ -284,87 +320,86 @@
   </div>
 
   <!-- Welcome & App Maqsad Intro Modal -->
-  <div id="welcomeModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 transition-opacity duration-300">
-    <div class="bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl shadow-2xl border border-emerald-700/30 dark:border-slate-800 overflow-hidden max-h-[92vh] flex flex-col animate-modal-pop">
-      <!-- Top Decorative Header -->
-      <div class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 text-white p-5 sm:p-6 text-center islamic-pattern relative shrink-0">
+    <div id="welcomeModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 transition-opacity duration-300">
+    <div class="w-full max-w-md rounded-3xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-modal-pop">
+      <div class="brand-hero text-white p-5 sm:p-6 text-center islamic-pattern relative shrink-0">
         <div class="arabic-text text-xl text-amber-300 font-bold mb-1" dir="rtl">
           بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
         </div>
-        <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-amber-400/70 mx-auto my-2.5 shadow-lg bg-emerald-950">
-          <img
-            src="./icon-192.png"
-            alt="Quran Logo"
-            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23064E3B%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%23FBBF24%22>📖</text></svg>';"
-            class="w-full h-full object-cover"
-          />
+        <div class="w-24 h-24 rounded-3xl overflow-hidden border-2 border-amber-300/70 mx-auto my-3 shadow-2xl luxe-logo" style="background:#080808;">
+          <img src="./icon-192.png" alt="Quranic Dictionary Logo" class="w-full h-full object-cover" />
         </div>
-        <h2 class="text-xl font-extrabold tracking-tight">
-          Quranic Dictionary Mein Khush Amdeed!
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-bold tracking-wide mb-3">
+          <i class="fa-solid fa-sparkles text-amber-300"></i>
+          <span>Ilm • Amal • Tadabbur</span>
+        </div>
+        <h2 class="text-[22px] sm:text-2xl font-extrabold tracking-tight leading-tight">
+          Quranic Dictionary
         </h2>
-        <p class="text-xs text-emerald-200 mt-1">
-          Quran Majeed ko samajh kar parhne ka asaan safar
+        <p class="text-xs text-blue-100 mt-1.5 max-w-[280px] mx-auto leading-relaxed">
+          Welcome — Quran Majeed ko samajhne ka khoobsurat safar.
         </p>
       </div>
 
-      <!-- Scrollable Intro & Features Body -->
-      <div class="p-5 overflow-y-auto space-y-4 text-xs sm:text-sm leading-relaxed">
-        <!-- App Ka Maqsad -->
-        <div class="p-3.5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200/80 dark:border-emerald-800/50">
-          <h3 class="font-extrabold text-emerald-900 dark:text-amber-300 text-xs uppercase tracking-wider mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-bullseye"></i> Is App Ka Maqsad Kya Hai?
-          </h3>
+      <div class="luxe-intro p-5 overflow-y-auto space-y-4 text-xs sm:text-sm leading-relaxed">
+        <div class="luxe-dedication">
+          <div class="luxe-dedication-label mb-1">With Love & Gratitude</div>
+          <div class="luxe-dedication-title">Dedicated to My Parents, Brothers &amp; Sister</div>
+          <div class="mt-1.5 text-[11px] text-amber-200">May Allah bless our family with knowledge, guidance and barakah. Ameen.</div>
+        </div>
+        <div class="brand-soft-card rounded-3xl p-4">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <h3 class="font-extrabold text-[13px] uppercase tracking-wider brand-primary-text flex items-center gap-2">
+              <i class="fa-solid fa-bullseye"></i> App Ka Maqsad
+            </h3>
+            <span class="brand-soft-chip text-[10px] font-extrabold px-2.5 py-1 rounded-full">500 Quranic Words</span>
+          </div>
           <p class="text-slate-700 dark:text-slate-200 text-xs leading-relaxed">
-            Hamara maqsad yeh hai ke jab aap <strong>Namaz</strong> mein ya <strong>Tilawat</strong> ke dauran Quran sunein aur parhein, to baghair kisi mushkil grammar ke <strong>Quran ke aam alfaaz ka mafhoom</strong> khud samajh sakein — kyunke Quran ke chand bunyadi alfaaz hazaron martaba repeat hote hain!
+            Is app ka maqsad yeh hai ke aap Quran Majeed aur Namaz mein aane wale aam alfaaz ka matlab dheere dheere samajh sakein — baghair mushkil grammar ke, asaan aur practical tareeqe se.
           </p>
         </div>
 
-        <!-- Is App Mein Aap Ko Kya Milega -->
         <div>
           <h3 class="font-extrabold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider mb-2.5 px-0.5">
-            Is App Mein Aap Ko Kya Milega:
+            Aap ko yahan kya milega?
           </h3>
-          <div class="space-y-2.5">
-            <div class="flex items-start gap-3 p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60">
-              <div class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
-                <i class="fa-solid fa-book-open text-xs"></i>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 p-3 rounded-2xl brand-soft-card">
+              <div class="w-9 h-9 rounded-2xl dark:text-amber-300 flex items-center justify-center shrink-0 mt-0.5" style="background:rgba(19,43,92,0.10); color:#132B5C;">
+                <i class="fa-solid fa-book-open text-sm"></i>
               </div>
               <div>
-                <div class="font-bold text-slate-900 dark:text-white text-xs">7 Lessons & Essential Alfaaz (Urdu + English)</div>
-                <div class="text-[11px] text-slate-600 dark:text-slate-300">Har lafz ka Arabic talaffuz (Audio), Urdu, Roman Urdu, English matlab aur Quranic Misaal.</div>
+                <div class="font-bold text-slate-900 dark:text-white text-xs">Dictionary + Quranic Vocabulary</div>
+                <div class="text-[11px] text-slate-600 dark:text-slate-300">Arabic, Urdu, Roman Urdu, English meanings aur Quranic references ke sath 500 essential words.</div>
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60">
-              <div class="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
-                <i class="fa-solid fa-person-praying text-xs"></i>
+            <div class="flex items-start gap-3 p-3 rounded-2xl brand-soft-card">
+              <div class="w-9 h-9 rounded-2xl bg-amber-500/15 text-amber-700 dark:text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-person-praying text-sm"></i>
               </div>
               <div>
-                <div class="font-bold text-slate-900 dark:text-white text-xs">Namaz Ki Masnoon Duain Aur Ambiya Ke Qissay</div>
-                <div class="text-[11px] text-slate-600 dark:text-slate-300">Sana, Ruku, Sajdah, Tashahhud, Durood aur Salam ke baad ki masnoon duayein tarjume aur audio ke sath.</div>
+                <div class="font-bold text-slate-900 dark:text-white text-xs">Namaz, Duain aur Ambiya</div>
+                <div class="text-[11px] text-slate-600 dark:text-slate-300">Masnoon duain, tarjuma, audio support aur Ambiya ke mukhtasar qissay roohani rabt ke sath.</div>
               </div>
             </div>
 
-            <div class="flex items-start gap-3 p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60">
-              <div class="w-8 h-8 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 flex items-center justify-center shrink-0 mt-0.5">
-                <i class="fa-solid fa-layer-group text-xs"></i>
+            <div class="flex items-start gap-3 p-3 rounded-2xl brand-soft-card">
+              <div class="w-9 h-9 rounded-2xl bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-layer-group text-sm"></i>
               </div>
               <div>
-                <div class="font-bold text-slate-900 dark:text-white text-xs">3D Flashcards, MCQ Quiz & Progress Tracker</div>
-                <div class="text-[11px] text-slate-600 dark:text-slate-300">Cards flip karke yaad karein, 10-sawalat ka imtihan dein aur dekhein ke aap ne kitne % Quran samajh liya.</div>
+                <div class="font-bold text-slate-900 dark:text-white text-xs">Flashcards, Quiz & Progress</div>
+                <div class="text-[11px] text-slate-600 dark:text-slate-300">Yaad-dasht mazboot karne ke liye smart flashcards, MCQ quiz aur progress tracking.</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Action Footer -->
-      <div class="p-4 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 shrink-0">
-        <button
-          onclick="dismissWelcomeModal()"
-          class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-800 to-emerald-950 hover:from-emerald-700 hover:to-emerald-900 text-white font-extrabold text-sm shadow-lg active:scale-95 transition flex items-center justify-center gap-2"
-        >
-          <span>Seekhna Shuru Karein (Bismillah)</span>
+      <div class="p-4 shrink-0" style="background:#101010;border-top:1px solid rgba(212,175,55,.24)">
+        <button onclick="dismissWelcomeModal()" class="brand-primary-btn w-full py-3.5 rounded-2xl text-white font-extrabold text-sm active:scale-95 transition flex items-center justify-center gap-2">
+          <span>Get Started — Bismillah</span>
           <i class="fa-solid fa-arrow-right text-amber-300"></i>
         </button>
       </div>
@@ -390,7 +425,7 @@
       </div>
 
       <!-- Today's Solid Motivational Message Preview -->
-      <div id="dailyQuoteCard" class="p-4 rounded-2xl bg-gradient-to-br from-emerald-900 to-emerald-950 text-white mb-4 islamic-pattern border border-emerald-700/50">
+      <div id="dailyQuoteCard" class="p-4 rounded-2xl bg-gradient-to-br from-amber-900 to-amber-950 text-white mb-4 islamic-pattern border border-amber-700/50">
         <!-- Populated dynamically by JS -->
       </div>
 
@@ -404,7 +439,7 @@
           <button
             id="reminderToggleBtn"
             onclick="toggleDailyReminder()"
-            class="px-4 py-2 rounded-xl font-extrabold text-xs transition active:scale-95 bg-emerald-800 text-white"
+            class="px-4 py-2 rounded-xl font-extrabold text-xs transition active:scale-95 bg-slate-800 text-white"
           >
             Enable
           </button>
@@ -422,11 +457,11 @@
                 id="newReminderTimeInput"
                 type="time"
                 value="08:00"
-                class="px-2.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 font-bold text-xs text-emerald-900 dark:text-amber-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                class="px-2.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 font-bold text-xs text-amber-300 dark:text-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-600"
               />
               <button
                 onclick="addReminderTime()"
-                class="px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs active:scale-95 transition flex items-center gap-1"
+                class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-amber-700 text-white font-bold text-xs active:scale-95 transition flex items-center gap-1"
               >
                 <i class="fa-solid fa-plus text-[10px]"></i> Add
               </button>
@@ -447,7 +482,7 @@
             <select
               id="reminderRepeatSelect"
               onchange="updateReminderRepeat(this.value)"
-              class="px-2.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 font-bold text-xs text-emerald-900 dark:text-amber-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+              class="px-2.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 font-bold text-xs text-amber-300 dark:text-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-600"
             >
               <option value="daily">Rozana (Daily)</option>
               <option value="every2h">Har 2 Ghante Baad</option>
@@ -476,7 +511,7 @@
         <div class="grid grid-cols-2 gap-2.5 pt-1">
           <button
             onclick="sendTestNotification()"
-            class="py-3 px-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-emerald-950 font-extrabold text-xs shadow-sm active:scale-95 transition flex items-center justify-center gap-1.5"
+            class="py-3 px-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-amber-200 font-extrabold text-xs shadow-sm active:scale-95 transition flex items-center justify-center gap-1.5"
           >
             <i class="fa-solid fa-paper-plane"></i> Test Random Alert
           </button>
@@ -10324,7 +10359,8 @@
       reflectedAmbiyaIds: [],
       learnedIds: [],
       bookmarkedIds: [],
-      darkMode: false,
+      darkMode: true,
+      appLanguage: 'roman',
       reminderEnabled: false,
       reminderTimes: ['08:00'],
       reminderRepeat: 'daily',
@@ -10359,6 +10395,7 @@
           state.reflectedAmbiyaIds = Array.isArray(parsed.reflectedAmbiyaIds) ? parsed.reflectedAmbiyaIds : [];
           state.quizHighScore = Number(parsed.quizHighScore) || 0;
           state.darkMode = Boolean(parsed.darkMode);
+          state.appLanguage = parsed.appLanguage === 'urdu' ? 'urdu' : 'roman';
           state.reminderEnabled = Boolean(parsed.reminderEnabled);
           if (Array.isArray(parsed.reminderTimes) && parsed.reminderTimes.length > 0) {
             state.reminderTimes = [...new Set(parsed.reminderTimes.filter(t => /^([01]\d|2[0-3]):[0-5]\d$/.test(t)))].sort();
@@ -10376,6 +10413,7 @@
         console.warn('Could not load saved state:', e);
       }
       applyTheme();
+      translateInterface(document.getElementById('appMain'));
       updateReminderUI();
       if (window.AndroidBridge) {
         window.AndroidBridge.updateReminders(JSON.stringify({enabled:state.reminderEnabled,times:state.reminderTimes,repeat:state.reminderRepeat,random:state.randomReminderEnabled}));
@@ -10391,6 +10429,7 @@
           reflectedAmbiyaIds: state.reflectedAmbiyaIds,
           quizHighScore: state.quizHighScore,
           darkMode: state.darkMode,
+          appLanguage: state.appLanguage,
           reminderEnabled: state.reminderEnabled,
           reminderTimes: state.reminderTimes,
           reminderRepeat: state.reminderRepeat,
@@ -10419,6 +10458,62 @@
         htmlEl.classList.remove('dark');
         if (iconEl) iconEl.className = 'fa-solid fa-moon text-sm';
       }
+    }
+
+
+    // Language selection is stored with existing app state. Original Arabic is never transliterated.
+    const UI_TRANSLATIONS = {
+      'Words':'الفاظ','Namaz':'نماز','Ambiya':'انبیاء','Cards':'کارڈز','Quiz':'کوئز','Progress':'پیش رفت',
+      'Quranic Dictionary':'قرآنی لغت','500 Essential Words • Urdu & English':'۵۰۰ اہم الفاظ • اردو اور انگریزی',
+      'All Lessons':'تمام اسباق','All Words':'تمام الفاظ','Learned':'یاد شدہ','Saved':'محفوظ',
+      'Search':'تلاش','Search Arabic, Urdu, English...':'عربی، اردو یا انگریزی تلاش کریں...',
+      'Roman Urdu:':'رومن اردو:','English:':'انگریزی:','Misaal (Quranic Example):':'مثال (قرآنی مثال):',
+      'Sunein':'سنیں','Listen':'سنیں','Next':'اگلا','Previous':'پچھلا','Start Quiz':'کوئز شروع کریں',
+      'Tap card to reveal Urdu & English meaning':'اردو اور انگریزی معنی دیکھنے کے لیے کارڈ دبائیں',
+      'Showing':'دکھائے جا رہے ہیں','Quranic words':'قرآنی الفاظ','to listen':'سننے کے لیے',
+      'Frequency not verified':'تعداد کی تصدیق نہیں ہوئی','Vocabulary Entries':'الفاظ',
+      'words learned':'الفاظ یاد ہوئے','Lesson':'سبق','Vocabulary lesson':'الفاظ کا سبق',
+      'Koi lafz nahi mila':'کوئی لفظ نہیں ملا','Search ya filter change karke dobara dekhein':'تلاش یا فلٹر بدل کر دوبارہ دیکھیں',
+      'Namaz Ki Masnoon Duain Aur Ambiya Ke Qissay':'نماز کی مسنون دعائیں اور انبیاء کے قصے',
+      'Dark Mode On':'ڈارک موڈ آن','Light Mode On':'لائٹ موڈ آن',
+      'Hamara maqsad':'ہمارا مقصد','Daily Reminder':'روزانہ یاد دہانی',
+      'Memorized':'یاد ہو گیا','Mark Learned':'یاد شدہ نشان لگائیں','Bookmark':'محفوظ کریں',
+      'Quranic Example':'قرآنی مثال','Tap':'دبائیں','Learn':'سیکھیں','Review':'دہرائیں'
+    };
+    const UI_REVERSE = Object.fromEntries(Object.entries(UI_TRANSLATIONS).map(([k,v])=>[v,k]));
+    function translateInterface(root) {
+      const urdu = state.appLanguage === 'urdu';
+      document.documentElement.lang = urdu ? 'ur' : 'en';
+      const label = document.getElementById('languageToggleLabel');
+      if (label) label.textContent = urdu ? 'Roman' : 'اردو';
+      const btn = document.getElementById('languageToggle');
+      if (btn) btn.setAttribute('aria-pressed', String(urdu));
+      // Only translate UI labels; Quranic Arabic, English word meanings and examples stay intact.
+      const areas = [document.querySelector('header'), document.querySelector('nav'), root];
+      for (const area of areas) {
+        if (!area) continue;
+        const walker = document.createTreeWalker(area, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        for (const node of nodes) {
+          const parent = node.parentElement;
+          if (!parent || parent.closest('.arabic-text, .urdu-text, [dir="rtl"], #languageToggle, script, style')) continue;
+          const value = node.nodeValue;
+          const trimmed = value.trim();
+          if (!trimmed) continue;
+          const lookup = urdu ? UI_TRANSLATIONS : UI_REVERSE;
+          if (lookup[trimmed]) node.nodeValue = value.replace(trimmed, lookup[trimmed]);
+        }
+      }
+      // Vocabulary/dua Urdu meaning shown in Urdu mode, Roman Urdu meaning in Roman mode.
+      document.querySelectorAll('[data-language="urdu"]').forEach(el => { el.style.display = urdu ? '' : 'none'; });
+      document.querySelectorAll('[data-language="roman"]').forEach(el => { el.style.display = urdu ? 'none' : ''; });
+    }
+    function toggleAppLanguage() {
+      state.appLanguage = state.appLanguage === 'urdu' ? 'roman' : 'urdu';
+      saveState();
+      renderCurrentTab();
+      translateInterface(document.getElementById('appMain'));
     }
 
     function toggleDarkMode() {
@@ -10542,12 +10637,12 @@
       if (toggleBtn) {
         toggleBtn.textContent = state.reminderEnabled ? 'Active (On)' : 'Enable';
         toggleBtn.className = state.reminderEnabled
-          ? 'px-4 py-2 rounded-xl font-extrabold text-xs transition active:scale-95 bg-emerald-600 text-white shadow-sm'
+          ? 'px-4 py-2 rounded-xl font-extrabold text-xs transition active:scale-95 bg-amber-600 text-white shadow-sm'
           : 'px-4 py-2 rounded-xl font-extrabold text-xs transition active:scale-95 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white';
       }
       if (timesListEl) {
         timesListEl.innerHTML = state.reminderTimes.map(t => `
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-100/90 dark:bg-emerald-900/50 text-emerald-950 dark:text-amber-300 font-bold text-xs">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-100/90 dark:bg-slate-900/50 text-amber-200 dark:text-amber-300 font-bold text-xs">
             <i class="fa-regular fa-clock text-[10px]"></i>
             ${formatTime12h(t)}
             ${state.reminderTimes.length > 1 ? `
@@ -10564,7 +10659,7 @@
       if (randomBtn) {
         randomBtn.textContent = state.randomReminderEnabled ? 'Random On' : 'Off';
         randomBtn.className = state.randomReminderEnabled
-          ? 'px-3 py-1.5 rounded-xl font-extrabold text-[11px] transition active:scale-95 bg-amber-500 text-emerald-950 shadow-sm'
+          ? 'px-3 py-1.5 rounded-xl font-extrabold text-[11px] transition active:scale-95 bg-amber-500 text-amber-200 shadow-sm'
           : 'px-3 py-1.5 rounded-xl font-extrabold text-[11px] transition active:scale-95 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300';
       }
       if (quoteCard) {
@@ -10584,7 +10679,7 @@
           <h4 class="text-sm sm:text-base font-extrabold text-white mt-1.5">
             ${msg.title}
           </h4>
-          <p class="text-xs sm:text-sm text-emerald-100/95 mt-1 leading-relaxed">
+          <p class="text-xs sm:text-sm text-amber-100/95 mt-1 leading-relaxed">
             ${msg.body}
           </p>
         `;
@@ -10953,7 +11048,7 @@
       });
       const activeBtn = document.getElementById(`nav-${tabName}`);
       if (activeBtn) {
-        activeBtn.className = 'nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl transition active:scale-95 text-emerald-800 dark:text-amber-400 bg-emerald-50 dark:bg-emerald-950/70 shadow-sm';
+        activeBtn.className = 'nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl transition active:scale-95 text-amber-400 dark:text-amber-400 bg-amber-50 dark:bg-slate-950/70 shadow-sm';
       }
       if (tabName === 'quiz' && state.quizQuestions.length === 0) {
         initQuiz();
@@ -10980,6 +11075,7 @@
       } else if (state.activeTab === 'progress') {
         renderProgress(main);
       }
+      translateInterface(main);
     }
 
     // ================= TAB 1: DICTIONARY =================
@@ -11020,9 +11116,9 @@
 
       container.innerHTML = `
         <!-- Daily Motivational Banner -->
-        <div onclick="openModal('reminderModal')" class="cursor-pointer mb-3 p-3.5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/10 to-amber-500/15 dark:from-amber-900/25 dark:to-emerald-950/40 border border-amber-400/40 dark:border-amber-700/40 flex items-start justify-between gap-2.5 card-hover-lift">
+        <div onclick="openModal('reminderModal')" class="cursor-pointer mb-3 p-3.5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-amber-500/15 dark:from-amber-900/25 dark:to-amber-950/40 border border-amber-400/40 dark:border-amber-700/40 flex items-start justify-between gap-2.5 card-hover-lift">
           <div class="flex items-start gap-2.5 flex-1 min-w-0">
-            <div class="w-8 h-8 rounded-xl bg-amber-500 text-emerald-950 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+            <div class="w-8 h-8 rounded-xl bg-amber-500 text-amber-200 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
               <i class="fa-solid fa-bell text-xs"></i>
             </div>
             <div class="flex-1 min-w-0">
@@ -11030,7 +11126,7 @@
                 Aaj Ka Motivation • ${state.reminderEnabled ? `${timesSummary}${state.randomReminderEnabled ? ' + Random' : ''}` : 'Tap to set reminder'}
               </div>
               ${todaysMsg.arabic ? `
-                <div class="arabic-text text-xl sm:text-2xl font-bold text-emerald-950 dark:text-amber-300 text-right my-2" dir="rtl">
+                <div class="arabic-text text-xl sm:text-2xl font-bold text-amber-200 dark:text-amber-300 text-right my-2" dir="rtl">
                   ${todaysMsg.arabic}
                 </div>
               ` : ''}
@@ -11054,7 +11150,7 @@
             value="${state.searchQuery.replace(/"/g, '&quot;')}"
             oninput="handleSearch(this.value)"
             placeholder="Search Arabic, Urdu, Roman Urdu or English..."
-            class="w-full pl-10 pr-9 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-sm"
+            class="w-full pl-10 pr-9 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600 shadow-sm"
           />
           ${state.searchQuery ? `
             <button onclick="handleSearch('')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
@@ -11075,7 +11171,7 @@
               onclick="setStatusFilter('${chip.id}')"
               class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
                 state.filterStatus === chip.id
-                  ? 'bg-emerald-800 text-white shadow-sm'
+                  ? 'bg-slate-800 text-white shadow-sm'
                   : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
               }"
             >
@@ -11090,8 +11186,8 @@
             onclick="setLessonFilter('all')"
             class="px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap transition ${
               state.selectedLesson === 'all'
-                ? 'bg-amber-500 text-emerald-950 font-bold'
-                : 'bg-emerald-900/10 dark:bg-slate-800 text-emerald-900 dark:text-slate-300'
+                ? 'bg-amber-500 text-amber-200 font-bold'
+                : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
             }"
           >
             All Lessons
@@ -11101,8 +11197,8 @@
               onclick="setLessonFilter('${l.id}')"
               class="px-3 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap transition ${
                 String(state.selectedLesson) === String(l.id)
-                  ? 'bg-amber-500 text-emerald-950 font-bold'
-                  : 'bg-emerald-900/10 dark:bg-slate-800 text-emerald-900 dark:text-slate-300'
+                  ? 'bg-amber-500 text-amber-200 font-bold'
+                  : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
               }"
             >
               L${l.id}: ${l.title.split(' ')[0]}
@@ -11112,17 +11208,17 @@
 
         <!-- Selected Lesson Heading Banner -->
         ${activeLessonObj ? `
-          <div class="mb-3 p-3.5 rounded-2xl bg-gradient-to-r from-emerald-900 to-emerald-800 text-white shadow-sm border border-emerald-700/50 animate-card-enter">
+          <div class="mb-3 p-3.5 rounded-2xl bg-gradient-to-r from-amber-900 to-amber-800 text-white shadow-sm border border-amber-700/50 animate-card-enter">
             <div class="flex items-center justify-between gap-2">
               <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/15 px-2 py-0.5 rounded-full">
                 Lesson ${activeLessonObj.id} • Vocabulary lesson
               </span>
-              <span class="text-[11px] text-emerald-200 font-medium">${activeLessonObj.subtitle}</span>
+              <span class="text-[11px] text-amber-200 font-medium">${activeLessonObj.subtitle}</span>
             </div>
             <h2 class="text-base font-extrabold mt-1.5 leading-snug">
               ${activeLessonObj.title}
             </h2>
-            <p class="text-xs text-emerald-100/90 mt-1 leading-relaxed">
+            <p class="text-xs text-amber-100/90 mt-1 leading-relaxed">
               ${activeLessonObj.desc}
             </p>
           </div>
@@ -11131,7 +11227,7 @@
         <!-- Results Count -->
         <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mb-2.5 px-1">
           <span>Showing <strong>${filtered.length}</strong> Quranic words</span>
-          <span>Tap <i class="fa-solid fa-volume-high text-emerald-700 dark:text-amber-400"></i> to listen</span>
+          <span>Tap <i class="fa-solid fa-volume-high text-amber-500 dark:text-amber-400"></i> to listen</span>
         </div>
 
         <!-- Word Cards List -->
@@ -11150,13 +11246,13 @@
               return `
                 <div style="animation-delay: ${staggerDelay}ms" class="animate-card-enter card-hover-lift bg-white dark:bg-slate-900 rounded-3xl p-4 shadow-sm border transition ${
                   isLearned
-                    ? 'border-emerald-500/50 dark:border-emerald-600/50 bg-emerald-50/30 dark:bg-emerald-950/15'
+                    ? 'border-amber-500/50 dark:border-amber-600/50 bg-amber-50/30 dark:bg-slate-950/15'
                     : 'border-slate-200/80 dark:border-slate-800'
                 }">
                   <div class="flex items-start justify-between gap-3">
                     <div class="flex-1 min-w-0">
                       <div class="flex items-center gap-1.5 flex-wrap mb-1">
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-100/80 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-100/80 dark:bg-slate-900/50 text-amber-400 dark:text-amber-300">
                           L${word.lesson} • ${word.category}
                         </span>
                         <span class="text-[10px] font-semibold text-slate-400">
@@ -11172,24 +11268,24 @@
                         <div class="text-base font-extrabold text-slate-900 dark:text-white leading-snug">
                           ${word.english}
                         </div>
-                        <div class="text-xs font-medium text-slate-600 dark:text-slate-300 mt-0.5">
-                          ${word.romanUrdu || "—"}
+                        <div data-language="roman" class="text-xs font-medium text-slate-600 dark:text-slate-300 mt-0.5">
+                          ${word.romanUrdu || word.transliteration || "—"}
                         </div>
                       </div>
                     </div>
 
                     <div class="text-right shrink-0">
-                      <div class="arabic-text text-3xl sm:text-4xl font-bold text-emerald-950 dark:text-amber-300" dir="rtl">
+                      <div class="arabic-text text-3xl sm:text-4xl font-bold text-amber-200 dark:text-amber-300" dir="rtl">
                         ${word.arabic}
                       </div>
-                      <div class="urdu-text text-lg font-bold text-slate-800 dark:text-slate-200 mt-1" dir="rtl">
+                      <div data-language="urdu" class="urdu-text text-lg font-bold text-slate-800 dark:text-slate-200 mt-1" dir="rtl">
                         ${word.urdu}
                       </div>
                     </div>
                   </div>
 
                   <div class="mt-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/60">
-                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 dark:text-amber-400 block mb-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 dark:text-amber-400 block mb-1">
                       Misaal (Quranic Example):
                     </span>
                     <p class="text-sm sm:text-base font-medium text-slate-800 dark:text-slate-100 leading-relaxed">
@@ -11201,7 +11297,7 @@
                     <button
                       onclick="speakArabic('${word.arabic}', this)"
                       title="Listen Pronunciation"
-                      class="px-3 py-1.5 rounded-xl bg-emerald-100/80 dark:bg-emerald-900/50 text-emerald-900 dark:text-amber-300 hover:bg-emerald-200 text-xs font-bold flex items-center gap-1.5 transition active:scale-95"
+                      class="px-3 py-1.5 rounded-xl bg-amber-100/80 dark:bg-slate-900/50 text-amber-300 dark:text-amber-300 hover:bg-amber-200 text-xs font-bold flex items-center gap-1.5 transition active:scale-95"
                     >
                       <i class="fa-solid fa-volume-high text-xs"></i> Sunein
                     </button>
@@ -11223,8 +11319,8 @@
                         onclick="toggleLearned(${word.id})"
                         class="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition active:scale-95 ${
                           isLearned
-                            ? 'bg-emerald-700 text-white shadow-sm'
-                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-emerald-100'
+                            ? 'bg-amber-700 text-white shadow-sm'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100'
                         }"
                       >
                         <i class="fa-solid ${isLearned ? 'fa-circle-check' : 'fa-check'}"></i>
@@ -11265,7 +11361,7 @@
         : NAMAZ_DUAIN.filter(d => d.category === state.selectedNamazCat);
 
       container.innerHTML = `
-        <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-3xl p-4 mb-3 shadow-md border border-emerald-700/50 islamic-pattern">
+        <div class="bg-gradient-to-br from-amber-900 to-amber-950 text-white rounded-3xl p-4 mb-3 shadow-md border border-amber-700/50 islamic-pattern">
           <div class="flex items-center justify-between gap-2">
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/15 px-2.5 py-0.5 rounded-full">
@@ -11274,13 +11370,13 @@
               <h2 class="text-base sm:text-lg font-extrabold mt-1.5">
                 Namaz Ki Masnoon Duain
               </h2>
-              <p class="text-xs text-emerald-100/90 mt-0.5">
+              <p class="text-xs text-amber-100/90 mt-0.5">
                 Takbeer se Salam tak har rukan ki masnoon dua tarjume aur audio ke sath
               </p>
             </div>
             <div class="text-right shrink-0 pl-2">
               <div class="text-lg font-black text-amber-300">${state.memorizedNamazIds.length}/${NAMAZ_DUAIN.length}</div>
-              <div class="text-[10px] text-emerald-200">Yaad Hain</div>
+              <div class="text-[10px] text-amber-200">Yaad Hain</div>
             </div>
           </div>
         </div>
@@ -11298,8 +11394,8 @@
               onclick="selectNamazCat('${tab.id}')"
               class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
                 state.selectedNamazCat === tab.id
-                  ? 'bg-amber-500 text-emerald-950 font-bold shadow-sm'
-                  : 'bg-emerald-900/10 dark:bg-slate-800 text-emerald-900 dark:text-slate-300'
+                  ? 'bg-amber-500 text-amber-200 font-bold shadow-sm'
+                  : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
               }"
             >
               ${tab.label}
@@ -11314,12 +11410,12 @@
             return `
               <article style="animation-delay: ${staggerDelay}ms" class="animate-card-enter card-hover-lift bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-5 shadow-sm border ${
                 isMemorized
-                  ? 'border-emerald-500/60 dark:border-emerald-600/50 bg-emerald-50/20 dark:bg-emerald-950/15'
+                  ? 'border-amber-500/60 dark:border-amber-600/50 bg-amber-50/20 dark:bg-slate-950/15'
                   : 'border-slate-200/80 dark:border-slate-800'
               }">
                 <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-slate-100 dark:border-slate-800">
                   <div>
-                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 dark:text-amber-400 bg-emerald-100/80 dark:bg-emerald-900/50 px-2.5 py-0.5 rounded-full">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 dark:text-amber-400 bg-amber-100/80 dark:bg-slate-900/50 px-2.5 py-0.5 rounded-full">
                       ${dua.step}
                     </span>
                     <h3 class="text-base font-extrabold text-slate-900 dark:text-white mt-1.5 leading-snug">
@@ -11333,14 +11429,14 @@
                   <button
                     onclick="speakArabic('${dua.arabic.replace(/'/g, "\\'")}', this)"
                     title="Listen Dua"
-                    class="px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 shrink-0 active:scale-95 transition shadow-sm"
+                    class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 shrink-0 active:scale-95 transition shadow-sm"
                   >
                     <i class="fa-solid fa-volume-high text-xs"></i> Sunein
                   </button>
                 </div>
 
-                <div class="my-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-50/90 to-amber-50/50 dark:from-emerald-950/50 dark:to-slate-800/70 border border-emerald-200/70 dark:border-emerald-800/40">
-                  <p class="arabic-text text-2xl sm:text-3xl font-bold text-emerald-950 dark:text-amber-300 text-right" dir="rtl">
+                <div class="my-4 p-4 rounded-2xl bg-gradient-to-br from-amber-50/90 to-amber-50/50 dark:from-amber-950/50 dark:to-slate-800/70 border border-amber-200/70 dark:border-amber-800/40">
+                  <p class="arabic-text text-2xl sm:text-3xl font-bold text-amber-200 dark:text-amber-300 text-right" dir="rtl">
                     ${dua.arabic}
                   </p>
                   <p class="text-xs font-semibold text-amber-800 dark:text-amber-400/90 mt-3 italic">
@@ -11350,14 +11446,14 @@
 
                 <div class="space-y-2.5">
                   <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700/60">
-                    <div class="urdu-text text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 text-right" dir="rtl">
+                    <div data-language="urdu" class="urdu-text text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 text-right" dir="rtl">
                       ${dua.urdu}
                     </div>
                   </div>
 
                   <div class="px-1 space-y-1.5">
-                    <p class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
-                      <strong class="text-emerald-800 dark:text-amber-400">Roman Urdu:</strong> ${dua.romanUrdu}
+                    <p data-language="roman" class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
+                      <strong class="text-amber-400 dark:text-amber-400">Roman Urdu:</strong> ${dua.romanUrdu}
                     </p>
                     <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                       <strong class="text-slate-800 dark:text-slate-300">English:</strong> ${dua.english}
@@ -11370,8 +11466,8 @@
                     onclick="toggleNamazMemorized('${dua.id}')"
                     class="px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition active:scale-95 ${
                       isMemorized
-                        ? 'bg-emerald-700 text-white shadow-sm'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-emerald-100'
+                        ? 'bg-amber-700 text-white shadow-sm'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-amber-100'
                     }"
                   >
                     <i class="fa-solid ${isMemorized ? 'fa-circle-check' : 'fa-check'}"></i>
@@ -11431,7 +11527,7 @@
         : AMBIYA_STORIES.filter(s => s.id === state.selectedNabiId);
 
       container.innerHTML = `
-        <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-3xl p-4 mb-3 shadow-md border border-emerald-700/50 islamic-pattern">
+        <div class="bg-gradient-to-br from-amber-900 to-amber-950 text-white rounded-3xl p-4 mb-3 shadow-md border border-amber-700/50 islamic-pattern">
           <div class="flex items-center justify-between gap-2">
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/15 px-2.5 py-0.5 rounded-full">
@@ -11440,13 +11536,13 @@
               <h2 class="text-base sm:text-lg font-extrabold mt-1.5">
                 Ambiya Karam (AS) Ke Qissay
               </h2>
-              <p class="text-xs text-emerald-100/90 mt-0.5">
+              <p class="text-xs text-amber-100/90 mt-0.5">
                 Har Nabi ke waqia se aaj ki zindagi mein amli implementation aur masnoon dua
               </p>
             </div>
             <div class="text-right shrink-0 pl-2">
               <div class="text-lg font-black text-amber-300">${state.reflectedAmbiyaIds.length}/${AMBIYA_STORIES.length}</div>
-              <div class="text-[10px] text-emerald-200">Parh Liye</div>
+              <div class="text-[10px] text-amber-200">Parh Liye</div>
             </div>
           </div>
         </div>
@@ -11456,8 +11552,8 @@
             onclick="selectNabiFilter('all')"
             class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
               state.selectedNabiId === 'all'
-                ? 'bg-amber-500 text-emerald-950 font-bold shadow-sm'
-                : 'bg-emerald-900/10 dark:bg-slate-800 text-emerald-900 dark:text-slate-300'
+                ? 'bg-amber-500 text-amber-200 font-bold shadow-sm'
+                : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
             }"
           >
             Tamam (${AMBIYA_STORIES.length})
@@ -11467,8 +11563,8 @@
               onclick="selectNabiFilter('${s.id}')"
               class="px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition ${
                 state.selectedNabiId === s.id
-                  ? 'bg-amber-500 text-emerald-950 font-bold shadow-sm'
-                  : 'bg-emerald-900/10 dark:bg-slate-800 text-emerald-900 dark:text-slate-300'
+                  ? 'bg-amber-500 text-amber-200 font-bold shadow-sm'
+                  : 'bg-slate-900/10 dark:bg-slate-800 text-amber-300 dark:text-slate-300'
               }"
             >
               ${s.name.replace('Hazrat ', '')}
@@ -11483,12 +11579,12 @@
             return `
               <article style="animation-delay: ${staggerDelay}ms" class="animate-card-enter card-hover-lift bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-5 shadow-sm border ${
                 isReflected
-                  ? 'border-emerald-500/60 dark:border-emerald-600/50 bg-emerald-50/20 dark:bg-emerald-950/15'
+                  ? 'border-amber-500/60 dark:border-amber-600/50 bg-amber-50/20 dark:bg-slate-950/15'
                   : 'border-slate-200/80 dark:border-slate-800'
               }">
                 <div class="flex items-start justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
                   <div>
-                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 dark:text-amber-400 bg-emerald-100/80 dark:bg-emerald-900/50 px-2.5 py-0.5 rounded-full">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 dark:text-amber-400 bg-amber-100/80 dark:bg-slate-900/50 px-2.5 py-0.5 rounded-full">
                       ${story.themeTag}
                     </span>
                     <h3 class="text-base font-extrabold text-slate-900 dark:text-white mt-1.5">
@@ -11498,28 +11594,28 @@
                       ${story.surahRef}
                     </p>
                   </div>
-                  <div class="arabic-text text-lg font-bold text-emerald-900 dark:text-amber-300 text-right shrink-0" dir="rtl">
+                  <div class="arabic-text text-lg font-bold text-amber-300 dark:text-amber-300 text-right shrink-0" dir="rtl">
                     ${story.arabicName}
                   </div>
                 </div>
 
                 <div class="mt-3">
                   <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
-                    <i class="fa-solid fa-book-open text-emerald-700 dark:text-amber-400 mr-1"></i> Quranic Qissa:
+                    <i class="fa-solid fa-book-open text-amber-500 dark:text-amber-400 mr-1"></i> Quranic Qissa:
                   </div>
                   <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
                     ${story.qissa}
                   </p>
                 </div>
 
-                <div class="mt-3.5 p-3.5 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200/70 dark:border-emerald-800/40">
-                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-900 dark:text-amber-300 mb-2">
+                <div class="mt-3.5 p-3.5 rounded-2xl bg-amber-50/80 dark:bg-slate-950/40 border border-amber-200/70 dark:border-amber-800/40">
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-300 dark:text-amber-300 mb-2">
                     <i class="fa-solid fa-person-walking-arrow-right mr-1"></i> Aaj Ki Zindagi Mein Amli Implementation:
                   </div>
                   <ul class="space-y-1.5">
                     ${story.implementation.map(point => `
                       <li class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 flex items-start gap-2 leading-relaxed">
-                        <i class="fa-solid fa-check-circle text-emerald-600 dark:text-amber-400 mt-1 text-xs shrink-0"></i>
+                        <i class="fa-solid fa-check-circle text-amber-500 dark:text-amber-400 mt-1 text-xs shrink-0"></i>
                         <span>${point}</span>
                       </li>
                     `).join('')}
@@ -11533,12 +11629,12 @@
                     </span>
                     <button
                       onclick="speakArabic('${story.duaArabic.replace(/'/g, "\\'")}', this)"
-                      class="px-2.5 py-1 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white text-[11px] font-bold flex items-center gap-1 active:scale-95 transition"
+                      class="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-amber-700 text-white text-[11px] font-bold flex items-center gap-1 active:scale-95 transition"
                     >
                       <i class="fa-solid fa-volume-high text-[10px]"></i> Sunein
                     </button>
                   </div>
-                  <p class="arabic-text text-xl sm:text-2xl font-bold text-emerald-950 dark:text-amber-300 text-right my-2" dir="rtl">
+                  <p class="arabic-text text-xl sm:text-2xl font-bold text-amber-200 dark:text-amber-300 text-right my-2" dir="rtl">
                     ${story.duaArabic}
                   </p>
                   <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
@@ -11559,8 +11655,8 @@
                     onclick="toggleAmbiyaReflected('${story.id}')"
                     class="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition active:scale-95 ${
                       isReflected
-                        ? 'bg-emerald-700 text-white shadow-sm'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-emerald-100'
+                        ? 'bg-amber-700 text-white shadow-sm'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-amber-100'
                     }"
                   >
                     <i class="fa-solid ${isReflected ? 'fa-circle-check' : 'fa-check'}"></i>
@@ -11599,7 +11695,7 @@
           <div class="flex items-center justify-between gap-2 mb-4">
             <select
               onchange="changeFlashcardDeck(this.value)"
-              class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-emerald-600"
+              class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-3.5 py-2.5 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-amber-600"
             >
               <option value="all" ${state.fcLesson === 'all' ? 'selected' : ''}>All Core Words (${QURAN_WORDS.length})</option>
               <option value="unlearned" ${state.fcLesson === 'unlearned' ? 'selected' : ''}>Unlearned Words Only</option>
@@ -11611,7 +11707,7 @@
               `).join('')}
             </select>
 
-            <span class="px-3 py-2.5 rounded-2xl bg-emerald-900/10 dark:bg-slate-800 text-xs font-extrabold text-emerald-900 dark:text-amber-400">
+            <span class="px-3 py-2.5 rounded-2xl bg-slate-900/10 dark:bg-slate-800 text-xs font-extrabold text-amber-300 dark:text-amber-400">
               ${state.fcIndex + 1} / ${deck.length}
             </span>
           </div>
@@ -11622,21 +11718,21 @@
               class="relative w-full min-h-[330px] cursor-pointer transform-style-3d ${state.fcFlipped ? 'rotate-y-180' : ''}"
             >
               <!-- FRONT OF CARD -->
-              <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-white via-cream to-emerald-50/60 dark:from-slate-900 dark:via-slate-900 dark:to-emerald-950/40 rounded-3xl p-6 shadow-xl border-2 border-emerald-800/15 dark:border-slate-800 flex flex-col justify-between items-center text-center">
+              <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-white via-cream to-amber-50/60 dark:from-slate-900 dark:via-slate-900 dark:to-amber-950/40 rounded-3xl p-6 shadow-xl border-2 border-amber-800/15 dark:border-slate-800 flex flex-col justify-between items-center text-center">
                 <div class="w-full flex justify-between items-center">
-                  <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
+                  <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-slate-900/60 text-amber-400 dark:text-amber-300">
                     Lesson ${card.lesson} • ${card.category}
                   </span>
                   <button
                     onclick="event.stopPropagation(); speakArabic('${card.arabic}', this)"
-                    class="w-10 h-10 rounded-2xl bg-emerald-800 text-white flex items-center justify-center shadow-md active:scale-90"
+                    class="w-10 h-10 rounded-2xl bg-slate-800 text-white flex items-center justify-center shadow-md active:scale-90"
                   >
                     <i class="fa-solid fa-volume-high"></i>
                   </button>
                 </div>
 
                 <div class="my-auto py-4">
-                  <div class="arabic-text text-6xl font-bold text-emerald-950 dark:text-amber-300 mb-3" dir="rtl">
+                  <div class="arabic-text text-6xl font-bold text-amber-200 dark:text-amber-300 mb-3" dir="rtl">
                     ${card.arabic}
                   </div>
                   <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-300 bg-amber-100/80 dark:bg-amber-900/30 px-3 py-1 rounded-full">
@@ -11645,24 +11741,24 @@
                 </div>
 
                 <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
-                  <i class="fa-solid fa-hand-pointer text-emerald-600 dark:text-amber-400"></i>
+                  <i class="fa-solid fa-hand-pointer text-amber-500 dark:text-amber-400"></i>
                   Tap card to reveal Urdu & English meaning
                 </div>
               </div>
 
               <!-- BACK OF CARD -->
-              <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-3xl p-6 shadow-xl border-2 border-amber-400/30 flex flex-col justify-between text-center islamic-pattern">
+              <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-900 to-amber-950 text-white rounded-3xl p-6 shadow-xl border-2 border-amber-400/30 flex flex-col justify-between text-center islamic-pattern">
                 <div class="flex justify-between items-center">
                   <span class="text-xs font-bold text-amber-300">${card.transliteration || "—"}</span>
                   <span class="arabic-text text-2xl font-bold text-white" dir="rtl">${card.arabic}</span>
                 </div>
 
                 <div class="my-auto space-y-2">
-                  <div class="urdu-text text-3xl font-bold text-amber-300" dir="rtl">
+                  <div data-language="urdu" class="urdu-text text-3xl font-bold text-amber-300" dir="rtl">
                     ${card.urdu}
                   </div>
-                  <div class="text-sm font-medium text-emerald-200">
-                    (${card.romanUrdu || "—"})
+                  <div data-language="roman" class="text-sm font-medium text-amber-200">
+                    (${card.romanUrdu || card.transliteration || "—"})
                   </div>
                   <div class="w-12 h-0.5 bg-white/20 mx-auto my-2"></div>
                   <div class="text-xl font-extrabold text-white">
@@ -11670,7 +11766,7 @@
                   </div>
                 </div>
 
-                <div class="bg-black/30 rounded-2xl p-3 text-xs text-emerald-100 border border-white/10">
+                <div class="bg-black/30 rounded-2xl p-3 text-xs text-amber-100 border border-white/10">
                   ${card.example || "Verse example not yet verified."}
                 </div>
               </div>
@@ -11689,8 +11785,8 @@
               onclick="markFlashcardLearned(${card.id})"
               class="py-3 rounded-2xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition ${
                 isLearned
-                  ? 'bg-emerald-700 text-white'
-                  : 'bg-amber-500 text-emerald-950'
+                  ? 'bg-amber-700 text-white'
+                  : 'bg-amber-500 text-amber-200'
               }"
             >
               <i class="fa-solid ${isLearned ? 'fa-circle-check' : 'fa-check'}"></i>
@@ -11783,11 +11879,11 @@
             <h2 class="text-xl font-extrabold">Quiz Completed!</h2>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Aap ka Imtihan Result</p>
 
-            <div class="my-5 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200/70 dark:border-emerald-800/40">
-              <div class="text-3xl font-black text-emerald-800 dark:text-amber-400">
+            <div class="my-5 p-4 rounded-2xl bg-amber-50 dark:bg-slate-950/50 border border-amber-200/70 dark:border-amber-800/40">
+              <div class="text-3xl font-black text-amber-400 dark:text-amber-400">
                 ${state.quizScore} / ${state.quizQuestions.length}
               </div>
-              <div class="text-xs font-semibold text-emerald-700 dark:text-emerald-300 mt-1">
+              <div class="text-xs font-semibold text-amber-500 dark:text-amber-300 mt-1">
                 Accuracy: ${pct}% • Best Score: ${state.quizHighScore}/10
               </div>
             </div>
@@ -11795,7 +11891,7 @@
             <div class="space-y-2.5">
               <button
                 onclick="restartQuiz(false)"
-                class="w-full py-3.5 rounded-2xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow-md active:scale-95 transition"
+                class="w-full py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm shadow-md active:scale-95 transition"
               >
                 <i class="fa-solid fa-rotate-right mr-1.5"></i> Start New 10-Word Quiz
               </button>
@@ -11803,7 +11899,7 @@
               ${state.quizMissedIds.length >= 4 ? `
                 <button
                   onclick="restartQuiz(true)"
-                  class="w-full py-3 rounded-2xl bg-amber-500 text-emerald-950 font-bold text-xs active:scale-95 transition"
+                  class="w-full py-3 rounded-2xl bg-amber-500 text-amber-200 font-bold text-xs active:scale-95 transition"
                 >
                   Practice Missed Words (${state.quizMissedIds.length})
                 </button>
@@ -11820,45 +11916,45 @@
       container.innerHTML = `
         <div class="flex items-center justify-between mb-3 px-1">
           <span class="text-xs font-bold text-slate-600 dark:text-slate-300">
-            Question <span class="text-emerald-700 dark:text-amber-400">${state.quizCurrent + 1}</span> of ${state.quizQuestions.length}
+            Question <span class="text-amber-500 dark:text-amber-400">${state.quizCurrent + 1}</span> of ${state.quizQuestions.length}
           </span>
           <div class="flex items-center gap-2">
             <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300">
               <i class="fa-solid fa-fire mr-1"></i>Streak: ${state.quizStreak}
             </span>
-            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-slate-900/50 text-amber-400 dark:text-amber-300">
               Score: ${state.quizScore}
             </span>
           </div>
         </div>
 
-        <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-3xl p-6 text-center shadow-lg mb-4 islamic-pattern relative">
+        <div class="bg-gradient-to-br from-amber-900 to-amber-950 text-white rounded-3xl p-6 text-center shadow-lg mb-4 islamic-pattern relative">
           <button
             onclick="speakArabic('${target.arabic}', this)"
             class="absolute top-3.5 right-3.5 w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 flex items-center justify-center text-amber-300"
           >
             <i class="fa-solid fa-volume-high text-xs"></i>
           </button>
-          <p class="text-[11px] uppercase tracking-wider text-emerald-200 font-semibold mb-3 pr-8">
+          <p class="text-[11px] uppercase tracking-wider text-amber-200 font-semibold mb-3 pr-8">
             Is Quranic lafz ka sahi matlab chunein:
           </p>
           <div class="arabic-text text-5xl font-bold text-amber-300 my-3" dir="rtl">
             ${target.arabic}
           </div>
-          <div class="text-xs text-emerald-200/90 font-medium mt-2">
+          <div class="text-xs text-amber-200/90 font-medium mt-2">
             (${target.transliteration || "Arabic vocabulary"})
           </div>
         </div>
 
         <div class="space-y-2.5">
           ${qObj.options.map((opt, idx) => {
-            let btnStyle = 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-emerald-500';
+            let btnStyle = 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-amber-500';
             let badgeIcon = '';
             const staggerDelay = idx * 45;
 
             if (state.quizAnswered) {
               if (opt.id === target.id) {
-                btnStyle = 'bg-emerald-600 text-white border-emerald-600 shadow-md scale-[1.01]';
+                btnStyle = 'bg-amber-600 text-white border-amber-600 shadow-md scale-[1.01]';
                 badgeIcon = '<i class="fa-solid fa-circle-check text-white text-base"></i>';
               } else if (opt.id === state.quizSelectedOption) {
                 btnStyle = 'bg-rose-600 text-white border-rose-600';
@@ -11877,10 +11973,10 @@
               >
                 <div>
                   <div class="text-sm font-bold">${opt.english}</div>
-                  <div class="text-xs opacity-85 mt-0.5">${opt.romanUrdu || opt.english}</div>
+                  <div data-language="roman" class="text-xs opacity-85 mt-0.5">${opt.romanUrdu || opt.english}</div>
                 </div>
                 <div class="flex items-center gap-2.5">
-                  <span class="urdu-text text-base font-bold" dir="rtl">${opt.urdu}</span>
+                  <span data-language="urdu" class="urdu-text text-base font-bold" dir="rtl">${opt.urdu}</span>
                   ${badgeIcon}
                 </div>
               </button>
@@ -11891,7 +11987,7 @@
         ${state.quizAnswered ? `
           <button
             onclick="nextQuizQuestion()"
-            class="w-full mt-4 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-emerald-950 font-extrabold text-sm shadow-lg active:scale-95 transition flex items-center justify-center gap-2"
+            class="w-full mt-4 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-amber-200 font-extrabold text-sm shadow-lg active:scale-95 transition flex items-center justify-center gap-2"
           >
             ${state.quizCurrent + 1 < state.quizQuestions.length ? 'Next Question' : 'See Final Result'}
             <i class="fa-solid fa-arrow-right"></i>
@@ -11952,7 +12048,7 @@
       container.innerHTML = `
         <div class="grid grid-cols-3 gap-2.5 mb-4">
           <div class="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center shadow-sm">
-            <div class="text-xl font-black text-emerald-700 dark:text-emerald-400">${state.learnedIds.length}</div>
+            <div class="text-xl font-black text-amber-500 dark:text-emerald-400">${state.learnedIds.length}</div>
             <div class="text-[10px] font-semibold text-slate-500 mt-0.5">Words Learned</div>
           </div>
           <div class="bg-white dark:bg-slate-900 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center shadow-sm">
@@ -11980,14 +12076,14 @@
               <div class="bg-white dark:bg-slate-900 rounded-3xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
                 <div class="flex items-start justify-between gap-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-amber-300 flex items-center justify-center shrink-0">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-slate-900/50 text-amber-400 dark:text-amber-300 flex items-center justify-center shrink-0">
                       <i class="fa-solid ${lesson.icon}"></i>
                     </div>
                     <div>
                       <div class="text-xs font-extrabold text-slate-900 dark:text-white">
                         Lesson ${lesson.id}: ${lesson.title}
                       </div>
-                      <div class="text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">
+                      <div class="text-[11px] text-amber-500 dark:text-emerald-400 font-medium">
                         ${lesson.subtitle} • Vocabulary practice
                       </div>
                     </div>
@@ -12002,13 +12098,13 @@
                 </p>
 
                 <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden my-2.5">
-                  <div class="h-full bg-emerald-600 dark:bg-amber-500 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+                  <div class="h-full bg-amber-600 dark:bg-amber-500 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
                 </div>
 
                 <div class="flex gap-2">
                   <button
                     onclick="openLessonInDictionary(${lesson.id})"
-                    class="flex-1 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold hover:bg-emerald-100 transition"
+                    class="flex-1 py-2 rounded-xl bg-amber-50 dark:bg-slate-950/60 text-amber-400 dark:text-amber-300 text-xs font-bold hover:bg-amber-100 transition"
                   >
                     Study Words
                   </button>

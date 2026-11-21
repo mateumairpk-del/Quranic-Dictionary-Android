@@ -1,0 +1,7 @@
+Language toggle implementation (beta):
+- Toggle next to theme button, preference saved in localStorage.
+- Urdu/Roman vocabulary and Namaz dua meaning display switches when both values exist.
+- Navigation labels and selected UI labels switch.
+- Arabic script unchanged.
+LIMITATIONS: This is NOT a complete app-wide translation. Many long Roman Urdu paragraphs in Ambiya, Namaz and help sections remain Roman Urdu in Urdu mode. 374 vocabulary entries lack Roman Urdu translations in the supplied project; these use transliteration as a temporary fallback, which is not a meaning. A full app-wide translation requires human-reviewed Roman Urdu meanings and Urdu-script versions of prose.
+- Static JavaScript syntax validated, but browser UI and Android APK have NOT been tested.
